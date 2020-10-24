@@ -4,10 +4,10 @@
  
  ## Project Screen Shots
  ### Form Screen
- ![Shop](https://i.ibb.co/nPvkyL0/shop.jpg)
+ ![Shop](https://i.ibb.co/F34SQjz/form.jpg)
  
  ### Tours Section
- ![Shop](https://i.ibb.co/VgwCsR1/Cart.jpg)
+ ![Shop](https://i.ibb.co/JFyptdz/tours.jpg)
  
  ## Installation and Setup Instructions
 Clone down this repository. You will need node and npm installed globally on your machine.
@@ -19,7 +19,7 @@ npm install
 
 To Visit App:
 
-https://omer-shop-crwn-live.herokuapp.com/
+ https://omerhai.github.io/natours/
 
 ## Reflection
 The goal of the project was to realize and deeply understand HTML, SASS, BEM method and 7/1 folders design.
