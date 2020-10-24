@@ -1,0 +1,68 @@
+/* Styles for story component */
+/* Styles for story container */
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+    
+
+    /* Styles for the image container */
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;// Must when we use outside
+        -webkit-shape-outside: circle(50% at 50% 50%);// Makes all content outside of the shape in circle shape
+        shape-outside: circle(50% at 50% 50%);// Makes all content outside of the shape in circle shape
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12.01deg);
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    /* Styles for the image itself */
+    &__img {
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .5s;
+    }
+
+    /* Styles for the text container */
+    &__text {
+        transform: skewX(12deg);
+    }
+
+    /* Styles for the image caption */
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        color: $color-white;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    /* Styles for caption when user hovers on the story container */
+    &:hover &__caption {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    /* Styles for image when user hovers on the story container */
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);// Make the image with blur and more darker
+    }
+}

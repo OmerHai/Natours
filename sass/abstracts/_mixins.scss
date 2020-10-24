@@ -1,0 +1,10 @@
+/* This is for all the mixins in the app */
+
+/* Fix the 0 height problem when all the child are floated(like in the row class) */
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

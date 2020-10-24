@@ -1,0 +1,29 @@
+/* This is the main file, here we have all the imports */
+
+/* Import from the abstracts folder */
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+/* Import from the base folder */
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+/* Import from the components folder */
+@import "components/bg-video";
+@import "components/button";
+@import "components/card";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/form";
+@import "components/story";
+
+/* Import from the layout folder */
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+
+/* Import from the pages folder */
+@import "pages/home";

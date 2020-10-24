@@ -1,0 +1,64 @@
+/* Styles for all section in the main */
+
+/* Styles for about section */
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -15vh; // This is for get rid of the triangle of the clip path in the header
+}
+
+/* Styles for features section*/
+.section-featrues {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)),
+    url('../../img/nat-4.jpg');
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    /* Styles for all direct childs of section features */
+    & > * {
+        transform: skewY(7deg);
+    }
+}
+
+/* Styles for section tours */
+.section-tours {
+    padding: 25rem 0 15rem 0;// Top right bottom left 
+    background-color: $color-grey-light-1;
+    margin-top: -10rem;
+}
+
+/* Styles for section stories */
+.section-stories {
+    position: relative;
+    padding: 15rem 0; 
+}
+
+/* Styles for section book */
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+/* Styles for book container */
+.book {
+    background-image: linear-gradient(105deg, 
+                                        rgba($color-white, .9),
+                                        rgba($color-white, .9) 50%,
+                                        transparent 50%), 
+                        url('../img/nat-10.jpg');
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    height: 50rem;
+
+    /* Styles for the form container */
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
+}

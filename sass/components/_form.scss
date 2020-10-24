@@ -1,0 +1,109 @@
+/* Styles for form in all webstie */
+.form {
+
+    /* Styles for form group container for all except last one*/
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    /* Styles for all text fields in form */
+    &__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 100%;
+        display: block;
+        transition: all .3s;
+
+        /* Styles when user focus on the input */
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+
+            /* Styles when the input is invalid and the user focus on text field */
+            &:invalid {
+                border-bottom: 3px solid $color_secondary-dark;
+            }
+        }
+
+        /* Styles for placeholder in text field */
+        &::-webkit-input-placeholder{
+            color: $color-grey-dark-2;
+        }
+    }
+
+    /* Styles for all labels in form */
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    /* Styles for adjecent immideitly sibling(label in this case) only when the placeholder is shown */
+    &__input:placeholder-shown + &__label{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    /* Styles of radio container */
+    &__radio-group {
+        width: 49%;
+        display: inline-block;
+    }
+
+    /* Styles for the radio input */
+    &__radio-input {
+        display: none;
+    }
+
+    /* Styles for radio label */
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    /* Styles for the radio button itself */
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        top: -.4rem;
+        left: 0;
+
+        /* Styles for the inside of the button(it is new element) */
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    /* Styles for the radio button when input is checked*/
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+}

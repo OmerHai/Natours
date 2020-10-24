@@ -1,0 +1,56 @@
+/* This is for all the animation that we have in the app */
+
+/* Makes animation that comes from left side to right side */
+@keyframes moveInLeft {
+    /* Before start*/
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    
+    80% {
+        transform: translateX(1rem);
+    }
+
+    /* In the end */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* Makes animation that comes from right side to left side */
+@keyframes moveInRight {
+    /* Before start*/
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    /* In the end */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* Makes animation that comes from bottom to top */
+@keyframes moveInBottom {
+    /* Before start*/
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    /* In the end */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

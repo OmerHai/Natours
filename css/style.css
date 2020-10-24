@@ -1,0 +1,723 @@
+/* This is the main file, here we have all the imports */
+/* Import from the abstracts folder */
+/* This is for all the mixins in the app */
+/* Fix the 0 height problem when all the child are floated(like in the row class) */
+/* This file is for all the variables that in the app */
+/* Import from the base folder */
+/* This is for all the animation that we have in the app */
+/* Makes animation that comes from left side to right side */
+@keyframes moveInLeft {
+  /* Before start*/
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  /* In the end */
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* Makes animation that comes from right side to left side */
+@keyframes moveInRight {
+  /* Before start*/
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  /* In the end */
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* Makes animation that comes from bottom to top */
+@keyframes moveInBottom {
+  /* Before start*/
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  /* In the end */
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* This is partial scss file(because of _) 
+   This file include the universal selector and styles for body and html selectors*/
+/* Universal selector for padding and margin for all the elements that in the html*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+/* All the font properties is here because the inheritance in css */
+body {
+  box-sizing: border-box; }
+
+/* This is styles for all the text in our app */
+/* Styles text for all app */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+/* Styles for the heading of our web */
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* Fix the shaky problem in the animation(going to top problem) */
+  margin-bottom: 6rem;
+  /* Styles for the first part(Outdoor) */
+  /* Styles for the slogan(sub-part) */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
+
+/* Styles for the heading secondary in all site */
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  /* Make the background clip only when ever the text is */
+  background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* x direction, y direction, blur */ }
+
+/* Styles for heading size 3 in all website */
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+/* Styles for paragraphs in all website */
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+/* Styles for utilting things like center text */
+/* Style for utility that center text */
+.u-center-text {
+  text-align: center !important; }
+
+/* Style for utility that make small bottom margin(2rem) */
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+/* Style for utility that make medium bottom margin(4rem) */
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+/* Style for utility that make big bottom margin(8rem) */
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+/* Style for utility that make big top margin(8rem) */
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+/* Style for utility that make huge top margin(8rem) */
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+/* Import from the components folder */
+/* Styles for the background video component */
+/* background video container */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden;
+  /* Styls for the video content */ }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+/* This is for the button component that we can use over the app */
+/* Styles for the button component */
+.btn {
+  /* Styles for btn that is link and also after we click on the link */
+  /* Styles for when the user hover button */
+  /* Styles for when user press on the button */
+  /* Styles for buttons the will be white */
+  /* Styles for buttons the will be green */
+  /* Styles for the virtual element that come after the button element */
+  /* Styles for button that animate from bottom to top */ }
+  .btn, .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* Styles for after only when user hover button */ }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+      /* For fades out */ }
+  .btn:active, .btn:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn--green {
+    background-color: #55c57a;
+    color: #fff; }
+    .btn--green::after {
+      background-color: #55c57a; }
+  .btn::after {
+    content: "";
+    /* Neccery in after pseudo class */
+    display: inline-block;
+    /* Neccery in after pseudo class */
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    /* Only in the intial state */ }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+    /* do animation 0% before he starts */ }
+
+/* Styles for the text button */
+.btn-text {
+  /* Styles for btn that is link and also after we click on the link */
+  /* Styles for when the user hover button */
+  /* Styles for when user press on the button */ }
+  .btn-text:link, .btn-text:visited {
+    font-size: 1.6rem;
+    color: #55c57a;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid #55c57a;
+    padding: 3px;
+    transition: all .2s; }
+  .btn-text:hover {
+    background-color: #55c57a;
+    color: #fff;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); }
+  .btn-text:active {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transform: translateY(0); }
+
+/* Styles for the card component */
+/* Styles for the card container */
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+  /* Styles for the card side container */
+  /* Styles for when user hover the front card */
+  /* Styles for when user hover the back card */
+  /* Styles for front picture card */
+  /* Styles for card heading */
+  /* Styles for card heading text */
+  /* Styles for the card details */
+  /* Styles for the back side container */
+  /* Styles for the price container */
+  /* Styles for the only text */
+  /* Styles for the price value */ }
+  .card__side {
+    height: 52rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    /* Styles for the front card side */
+    /* Styles for the back card side */ }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg);
+      /* Styles for the first card */
+      /* Styles for the second card */
+      /* Styles for the third card */ }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #fbb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    /* Styles for picture of the first card */
+    /* Styles for picture of the second card */
+    /* Styles for picture of the third card */ }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #fbb900, #ff7730), url("../img/nat-5.jpg"); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../img/nat-6.jpg"); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../img/nat-7.jpg"); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    /* Styles for card heading text of first card*/
+    /* Styles for card heading text of second card*/
+    /* Styles for card heading text of third card*/ }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(251, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .card__details {
+    padding: 3rem;
+    /* Styles for the ul */ }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      /* Styles for all the li */ }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        /* Styles for every li except last one*/ }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: #fff; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
+
+/* Styles for image composition(like about section) */
+/* Styles for the composition container */
+.composition {
+  position: relative;
+  /* Styles for image in the composition */
+  /* Styles for the unhover photo */ }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem;
+    /* Styles for the first image in the composition */
+    /* Styles for the second image in the composition */
+    /* Styles for the third image in the composition */
+    /* Styles when user hovers image */ }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+/* Styles for the feature box */
+/* Styles for feature box container */
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s;
+  /* Styles for feature box icons */
+  /* Styles for when the user hover */ }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    /* Make the background clip only when ever the text is */
+    background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: scale(1.03) translateY(-1.5rem); }
+
+/* Styles for form in all webstie */
+.form {
+  /* Styles for form group container for all except last one*/
+  /* Styles for all text fields in form */
+  /* Styles for all labels in form */
+  /* Styles for adjecent immideitly sibling(label in this case) only when the placeholder is shown */
+  /* Styles of radio container */
+  /* Styles for the radio input */
+  /* Styles for radio label */
+  /* Styles for the radio button itself */
+  /* Styles for the radio button when input is checked*/ }
+  .form__group:not(:last-child) {
+    margin-bottom: 2rem; }
+  .form__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+    transition: all .3s;
+    /* Styles when user focus on the input */
+    /* Styles for placeholder in text field */ }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid #55c57a;
+      /* Styles when the input is invalid and the user focus on text field */ }
+      .form__input:focus:invalid {
+        border-bottom: 3px solid #ff7730; }
+    .form__input::-webkit-input-placeholder {
+      color: #999; }
+  .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); }
+  .form__radio-group {
+    width: 49%;
+    display: inline-block; }
+  .form__radio-input {
+    display: none; }
+  .form__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem; }
+  .form__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #55c57a;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -.4rem;
+    left: 0;
+    /* Styles for the inside of the button(it is new element) */ }
+    .form__radio-button::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #55c57a;
+      opacity: 0;
+      transition: opacity .2s; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    opacity: 1; }
+
+/* Styles for story component */
+/* Styles for story container */
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg);
+  /* Styles for the image container */
+  /* Styles for the image itself */
+  /* Styles for the text container */
+  /* Styles for the image caption */
+  /* Styles for caption when user hovers on the story container */
+  /* Styles for image when user hovers on the story container */ }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12.01deg);
+    position: relative;
+    overflow: hidden; }
+  .story__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all .5s; }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1; }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
+
+/* Import from the layout folder */
+/* Styles for the footer of the webpage */
+/* Styles for footer container */
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: #f7f7f7;
+  /* Styles for the logo container */
+  /* Styles for the logo itself */
+  /* Styles for the navigation container */
+  /* Styles for the navigation list */
+  /* Styles for the navigation list items */
+  /* Styles for the links */
+  /* Styles for the copytight */ }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__navigation {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    color: #f7f7f7;
+    background-color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all .2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: rotate(5deg) scale(1.3); }
+  .footer__copyright {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    width: 80%;
+    float: right; }
+
+/* Styles for our grid system */
+/* Styles for the row in the grid */
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  /* Styles everyone except the last child in the row */
+  /* Selects all the elements that have attribute class that starts with col- */
+  /* Styles for 2 equals cols in a row */
+  /* Styles for 3 equals cols in a row */
+  /* Styles for 2/3 cols in a row */
+  /* Styles for 4 equals cols in a row */
+  /* Styles for 2/4 cols in a row */
+  /* Styles for 3/4 cols in a row */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left;
+    /* Styles everyone except the last child in the col */ }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% -  2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% -  2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% -  3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2*  ((100% -  3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 *  ((100% -  3 * 6rem) / 4) + 2 * 6rem); }
+
+/* This is for the header layout(we can have header in each page) */
+/* Styles for the header section(header page) */
+.header {
+  height: 90vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  /* Styles for the logo container */
+  /* Styles for the logo itself */
+  /* Styles for the container of the heading and button*/ }
+  .header__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px; }
+  .header__logo {
+    height: 3.5rem;
+    /* We can specify the height and than the width will be auto*/ }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Move the box to the center(beacuse it now reltive to the elment itself) */
+    text-align: center; }
+
+/* Import from the pages folder */
+/* Styles for all section in the main */
+/* Styles for about section */
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -15vh; }
+
+/* Styles for features section*/
+.section-featrues {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../../img/nat-4.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+  /* Styles for all direct childs of section features */ }
+  .section-featrues > * {
+    transform: skewY(7deg); }
+
+/* Styles for section tours */
+.section-tours {
+  padding: 25rem 0 15rem 0;
+  background-color: #f7f7f7;
+  margin-top: -10rem; }
+
+/* Styles for section stories */
+.section-stories {
+  position: relative;
+  padding: 15rem 0; }
+
+/* Styles for section book */
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+/* Styles for book container */
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../img/nat-10.jpg");
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  height: 50rem;
+  /* Styles for the form container */ }
+  .book__form {
+    width: 50%;
+    padding: 6rem; }

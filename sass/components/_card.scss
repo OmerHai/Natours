@@ -1,0 +1,186 @@
+/* Styles for the card component */
+/* Styles for the card container */
+.card {
+    // FUNCTIONALITY
+    perspective: 150rem;// Must be in the parent and must be big number of px
+    -moz-perspective: 150rem;// For mozila
+    position: relative;
+    height: 52rem;
+
+    /* Styles for the card side container */
+    &__side {
+        height: 52rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;// Hidden the back of an element
+        border-radius: 3px;
+        overflow: hidden; // Pervent picture to overflow the parent
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        /* Styles for the front card side */
+        &--front {
+            background-color: $color-white;
+        }
+
+        /* Styles for the back card side */
+        &--back {
+            transform: rotateY(180deg);
+
+            /* Styles for the first card */
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+
+            /* Styles for the second card */
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+
+            /* Styles for the third card */
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+            
+        }
+    }
+
+    /* Styles for when user hover the front card */
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+
+    /* Styles for when user hover the back card */
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+
+    // FRONT SIDE STYLING
+    /* Styles for front picture card */
+    &__picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;// Merge the two image nd gradient
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+
+        /* Styles for picture of the first card */
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+            url('../img/nat-5.jpg');
+        }
+
+        /* Styles for picture of the second card */
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
+            url('../img/nat-6.jpg');
+        }
+
+        /* Styles for picture of the third card */
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+            url('../img/nat-7.jpg');
+        }
+       
+    }
+
+    /* Styles for card heading */
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
+    }
+
+    /* Styles for card heading text */
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;// Make the declartion of styles for all the boxes
+       
+        /* Styles for card heading text of first card*/
+        &--1{
+            background-image: linear-gradient(to right bottom,
+            rgba($color-secondary-light, .85), 
+            rgba($color-secondary-dark, .85));
+        }
+
+        /* Styles for card heading text of second card*/
+        &--2{
+            background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, .85), 
+            rgba($color-primary-dark, .85));
+        }
+
+        /* Styles for card heading text of third card*/
+        &--3{
+            background-image: linear-gradient(to right bottom,
+            rgba($color-tertiary-light, .85), 
+            rgba($color-tertiary-dark, .85));
+        }
+    }
+
+    /* Styles for the card details */
+    &__details {
+        padding: 3rem;
+
+        /* Styles for the ul */
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            /* Styles for all the li */
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                /* Styles for every li except last one*/
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+            }
+        }
+    }
+
+    // BACK SIDE STYLING
+    /* Styles for the back side container */
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    /* Styles for the price container */
+    &__price-box {
+        text-align: center;
+        margin-bottom: 8rem;
+        color: $color-white;
+    }
+
+    /* Styles for the only text */
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    /* Styles for the price value */
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+
+}

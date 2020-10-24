@@ -1,0 +1,36 @@
+/* This is for the header layout(we can have header in each page) */
+/* Styles for the header section(header page) */
+.header {
+    height: 90vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+    url('../img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+
+    /* Styles for the logo container */
+    &__logo-box {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+    }
+
+    /* Styles for the logo itself */
+    &__logo {
+        height: 3.5rem; /* We can specify the height and than the width will be auto*/
+    }
+
+    /* Styles for the container of the heading and button*/
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);/* Move the box to the center(beacuse it now reltive to the elment itself) */
+        text-align: center;
+    }
+}

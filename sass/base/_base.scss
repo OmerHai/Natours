@@ -1,0 +1,19 @@
+/* This is partial scss file(because of _) 
+   This file include the universal selector and styles for body and html selectors*/
+
+/* Universal selector for padding and margin for all the elements that in the html*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // That defines what 1rem is
+    font-size: 62.5%;
+}
+
+/* All the font properties is here because the inheritance in css */
+body {
+    box-sizing: border-box;
+}
